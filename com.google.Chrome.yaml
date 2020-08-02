@@ -31,8 +31,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        branch: spawn-strategy
-        commit: 0c58167d2feb1e8065eafa3df06e7f63043a8a15
+        # branch: master
+        # commit: fa4365bd907089236a5ba0934ef176cd597be622
+        tag: v2020.10beta.1
       # - type: dir
       #   path: ../../code/zypak
 
