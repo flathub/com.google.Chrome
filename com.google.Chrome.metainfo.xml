@@ -22,10 +22,10 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="83.0.4103.116" date="2020-06-22" />
-    <release version="84.0.4147.89" date="2020-07-14" />
-    <release version="84.0.4147.105" date="2020-07-28" />
     <release version="84.0.4147.125" date="2020-08-10" />
+    <release version="84.0.4147.105" date="2020-07-28" />
+    <release version="84.0.4147.89" date="2020-07-14" />
+    <release version="83.0.4103.116" date="2020-06-22" />
   </releases>
   <content_rating type="oars-1.1">
   </content_rating>
