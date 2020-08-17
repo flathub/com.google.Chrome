@@ -1,5 +1,4 @@
 app-id: com.google.Chrome
-desktop-file-name-prefix: '(Testing) '
 runtime: org.freedesktop.Platform
 runtime-version: '19.08'
 sdk: org.freedesktop.Sdk
