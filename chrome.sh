@@ -38,5 +38,5 @@ if [[ -f "$XDG_CONFIG_HOME/chrome-flags.conf" ]]; then
   set -- "${flags[@]}" "$@"
 fi
 
-export TMPDIR="$XDG_CACHE_HOME"
+export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
 exec zypak-wrapper.sh /app/extra/chrome "$@"
