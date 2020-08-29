@@ -14,6 +14,7 @@ finish-args:
   - '--socket=pulseaudio'
   - '--socket=x11'
   - '--require-version=1.8.1'
+  - '--talk-name=org.freedesktop.FileManager1'
   - '--talk-name=org.freedesktop.Notifications'
   - '--talk-name=org.freedesktop.secrets'
   - '--talk-name=org.freedesktop.UPower'
@@ -33,7 +34,7 @@ modules:
         url: https://github.com/refi64/zypak
         # branch: master
         # commit: fa4365bd907089236a5ba0934ef176cd597be622
-        tag: v2020.10beta.1
+        tag: v2020.10beta.2
       # - type: dir
       #   path: ../../code/zypak
 
