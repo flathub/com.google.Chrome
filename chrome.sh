@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+# Merge the policies with the host ones.
 policy_root=/etc/opt/chrome/policies
 
 for policy_type in managed recommended; do
@@ -16,6 +17,7 @@ for policy_type in managed recommended; do
   fi
 done
 
+# Determine if to show the first run page & the mimic strategy warning.
 run_stamp="$XDG_DATA_HOME/flatpak-chrome-run-stamp"
 mimic_stamp="$XDG_DATA_HOME/flatpak-chrome-mimic-stamp"
 
