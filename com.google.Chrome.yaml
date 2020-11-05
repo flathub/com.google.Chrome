@@ -7,6 +7,8 @@ command: chrome
 separate-locales: false
 build-options:
   no-debuginfo: true
+tags:
+  - proprietary
 finish-args:
   - '--device=all'
   - '--env=GTK_PATH=/app/lib/gtkmodules'
