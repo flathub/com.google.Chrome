@@ -29,7 +29,14 @@
         after Chrome has started; restart Chrome for them to appear.</li>
       <li>Filesystem access is locked down, if you need to save into directories outside of the XDG dirs
         use <code>flatpak override</code>.</li>
-      <li>Installing PWAs / websites as apps silently will not work.</li>
+      <li>Installing PWAs / websites as apps will not work unless you pass:
+        <ul>
+          <li><code>--filesystem=~/.local/share/applications</code></li>
+          <li><code>--filesystem=~/.local/share/icons</code></li>
+        </ul>
+        via <code>flatpak override</code>.
+      </li>
+      <li>Applications cannot be added to the desktop.</li>
       <li>This Flatpak may break from time to time while still in beta.</li>
     </ul>
 

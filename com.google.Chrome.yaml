@@ -74,6 +74,13 @@ modules:
       # - type: dir
       #   path: ../../code/zypak
 
+  - name: flextop
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://github.com/refi64/flextop
+        commit: f0845f44e07739d3d1ba70a9f42fdfd0eb6947da
+
   - name: chrome
     buildsystem: simple
     build-commands:
