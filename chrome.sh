@@ -13,7 +13,7 @@ for policy_type in managed recommended; do
 
   if [[ -d "/run/host/$policy_root/$policy_type" ]]; then
     find "/run/host/$policy_root/$policy_type" -name '*.json' \
-      -exec ln -s '{}' "$policy_root/$policy_type" \;
+      -exec ln -sf '{}' "$policy_root/$policy_type" \;
   fi
 done
 
