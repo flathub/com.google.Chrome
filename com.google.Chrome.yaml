@@ -17,6 +17,7 @@ finish-args:
   - '--socket=cups'
   - '--socket=pulseaudio'
   - '--socket=x11'
+  - '--socket=wayland'
   - '--require-version=1.8.2'
   - '--system-talk-name=org.freedesktop.UPower'
   - '--talk-name=org.freedesktop.FileManager1'
@@ -103,9 +104,9 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_86.0.4240.198-1_amd64.deb
-        sha256: 3d0055cf8db589d1bc6eb6504791d141e7008fb34cdb85bd1d194893c7d1d061
-        size: 71160936
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_87.0.4280.66-1_amd64.deb
+        sha256: e7e4c6a2108140c572562867f522d0311a25ce03ea36c5452cb8431865871226
+        size: 72726412
         filename: chrome.deb
         only-arches: [x86_64]
       - type: script
