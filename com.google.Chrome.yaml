@@ -27,6 +27,7 @@ finish-args:
   - '--system-talk-name=org.freedesktop.Avahi'
   - '--own-name=org.mpris.MediaPlayer2.chrome.*'
   - '--filesystem=host-etc'
+  - '--filesystem=xdg-run/pipewire-0'
   - '--filesystem=xdg-documents'
   - '--filesystem=xdg-download'
   - '--filesystem=xdg-music'
@@ -64,6 +65,17 @@ modules:
     sources:
       - type: file
         path: gtk-settings.ini
+
+  - name: pipewire
+    buildsystem: meson
+    config-opts:
+      - -Dgstreamer=disabled
+      - -Dman=false
+      - -Dsystemd=false
+    sources:
+      - type: git
+        url: https://gitlab.freedesktop.org/pipewire/pipewire.git
+        tag: 0.2.7
 
   - name: zypak
     sources:
