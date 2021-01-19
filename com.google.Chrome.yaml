@@ -82,8 +82,7 @@ modules:
       - type: git
         url: https://github.com/refi64/zypak
         # branch: master
-        commit: 3f8407fd481034f142b3f182e85a78989bc02ce1
-        #tag: v2020.10beta.4
+        tag: v2021.01.1
       # - type: dir
       #   path: ../../code/zypak
 
