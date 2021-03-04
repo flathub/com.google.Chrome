@@ -115,7 +115,7 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_89.0.4389.72_amd64.deb
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_89.0.4389.72-1_amd64.deb
         sha256: 8b3ee655bf8c8114f4a6494c2161938582ad8cbe683251760ebe0363f2eb4dc0
         size: 81392912
         filename: chrome.deb
