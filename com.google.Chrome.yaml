@@ -93,7 +93,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/flextop
-        commit: 3d3f8fe389ad7f5e37bea6b424e1ec8d146eeb54
+        commit: 9f66dac84388f520ecab5ac4fa60df6343b7db5b
 
   - name: chrome
     buildsystem: simple
