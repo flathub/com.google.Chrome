@@ -25,7 +25,7 @@ finish-args:
   - '--talk-name=org.freedesktop.secrets'
   - '--talk-name=org.gnome.SessionManager'
   - '--system-talk-name=org.freedesktop.Avahi'
-  - '--own-name=org.mpris.MediaPlayer2.chrome.*'
+  - '--own-name=org.mpris.MediaPlayer2.chromium.*'
   - '--filesystem=host-etc'
   - '--filesystem=xdg-run/pipewire-0'
   - '--filesystem=xdg-documents'
