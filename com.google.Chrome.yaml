@@ -121,6 +121,12 @@ modules:
         size: 83325072
         filename: chrome.deb
         only-arches: [x86_64]
+        x-checker-data:
+          type: debian-repo
+          root: https://dl.google.com/linux/chrome/deb
+          dist: stable
+          component: main
+          package-name: google-chrome-stable
       - type: script
         dest-filename: stub_sandbox.sh
         commands:
