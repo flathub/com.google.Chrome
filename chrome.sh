@@ -32,6 +32,9 @@ if [[ ! -f "$mimic_stamp" ]] && ! zypak-helper spawn-strategy-test; then
   touch "$mimic_stamp"
 fi
 
+# Workaround for https://github.com/flathub/org.chromium.Chromium/issues/104
+set -- --disable-features=WebAssemblyTrapHandler "$@"
+
 if [[ -f "$XDG_CONFIG_HOME/chrome-flags.conf" ]]; then
   IFS=$'\n'
   flags=($(grep -v '^#' "$XDG_CONFIG_HOME/chrome-flags.conf"))
