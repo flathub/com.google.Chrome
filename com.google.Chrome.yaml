@@ -44,9 +44,10 @@ modules:
     cleanup:
       - /include
     sources:
-      - type: archive
-        url: https://github.com/apple/cups/releases/download/v2.3.3/cups-2.3.3-source.tar.gz
-        sha256: 261fd948bce8647b6d5cb2a1784f0c24cc52b5c4e827b71d726020bcc502f3ee
+      - type: git
+        url: https://github.com/OpenPrinting/cups.git
+        tag: v2.3.3op2
+        commit: 3b566f73587ffa8ad9690f2399efc4508b3a9016
 
   - name: gtk-cups-backend
     buildsystem: meson
