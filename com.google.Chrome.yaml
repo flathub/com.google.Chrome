@@ -10,29 +10,29 @@ build-options:
 tags:
   - proprietary
 finish-args:
-  - '--device=all'
-  - '--env=GTK_PATH=/app/lib/gtkmodules'
-  - '--share=ipc'
-  - '--share=network'
-  - '--socket=cups'
-  - '--socket=pulseaudio'
-  - '--socket=x11'
-  - '--socket=wayland'
-  - '--require-version=1.8.2'
-  - '--system-talk-name=org.freedesktop.UPower'
-  - '--talk-name=org.freedesktop.FileManager1'
-  - '--talk-name=org.freedesktop.Notifications'
-  - '--talk-name=org.freedesktop.secrets'
-  - '--talk-name=org.gnome.SessionManager'
-  - '--system-talk-name=org.freedesktop.Avahi'
-  - '--own-name=org.mpris.MediaPlayer2.chromium.*'
-  - '--filesystem=host-etc'
-  - '--filesystem=xdg-run/pipewire-0'
-  - '--filesystem=xdg-documents'
-  - '--filesystem=xdg-download'
-  - '--filesystem=xdg-music'
-  - '--filesystem=xdg-videos'
-  - '--filesystem=xdg-pictures'
+  - --device=all
+  - --env=GTK_PATH=/app/lib/gtkmodules
+  - --share=ipc
+  - --share=network
+  - --socket=cups
+  - --socket=pulseaudio
+  - --socket=x11
+  - --socket=wayland
+  - --require-version=1.8.2
+  - --system-talk-name=org.freedesktop.UPower
+  - --talk-name=org.freedesktop.FileManager1
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.gnome.SessionManager
+  - --system-talk-name=org.freedesktop.Avahi
+  - --own-name=org.mpris.MediaPlayer2.chromium.*
+  - --filesystem=host-etc
+  - --filesystem=xdg-run/pipewire-0
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-music
+  - --filesystem=xdg-videos
+  - --filesystem=xdg-pictures
 modules:
   - libsecret.json
 
@@ -63,7 +63,7 @@ modules:
   - name: gtk-settings
     buildsystem: simple
     build-commands:
-      - 'install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini'
+      - install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini
     sources:
       - type: file
         path: gtk-settings.ini
@@ -98,28 +98,28 @@ modules:
   - name: chrome
     buildsystem: simple
     build-commands:
-      - 'install -Dm 755 chrome.sh /app/bin/chrome'
-      - 'install -Dm 755 apply_extra.sh /app/bin/apply_extra'
-      - 'install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox'
-      - 'install -Dm 644 -t /app/share/flatpak-chrome flatpak_policy.json'
-      - 'install -Dm 644 -t /app/share/flatpak-chrome first_run.html'
-      - 'install -Dm 644 -t /app/share/flatpak-chrome mimic_warning.txt'
-      - 'install -Dm 644 -t /app/share/applications com.google.Chrome.desktop'
-      - 'install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml'
+      - install -Dm 755 chrome.sh /app/bin/chrome
+      - install -Dm 755 apply_extra.sh /app/bin/apply_extra
+      - install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox
+      - install -Dm 644 -t /app/share/flatpak-chrome flatpak_policy.json
+      - install -Dm 644 -t /app/share/flatpak-chrome first_run.html
+      - install -Dm 644 -t /app/share/flatpak-chrome mimic_warning.txt
+      - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
+      - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
       - |
-          for icon in 16 24 32 48 64 128 256; do
-            install -Dm 644 com.google.Chrome-$icon.png /app/share/icons/hicolor/${icon}x${icon}/apps/com.google.Chrome.png
-          done
+        for icon in 16 24 32 48 64 128 256; do
+          install -Dm 644 com.google.Chrome-$icon.png /app/share/icons/hicolor/${icon}x${icon}/apps/com.google.Chrome.png
+        done
 
       # For extra-data to be able to extract the .deb
-      - 'install -Dm 755 /{usr,app}/bin/ar'
-      - 'cp /usr/lib/$(gcc --print-multiarch)/libbfd-*.so /app/lib'
+      - install -Dm 755 /{usr,app}/bin/ar
+      - cp /usr/lib/$(gcc --print-multiarch)/libbfd-*.so /app/lib
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_90.0.4430.212-1_amd64.deb
-        sha256: 274b473c4b4a3bcd0839e777ed466550daceae4352570ca4f342e824506163f8
-        size: 83325072
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_91.0.4472.77-1_amd64.deb
+        sha256: 4d355db6df597b9e530a3398089bdabd5b167d0c54dd08976d2f96aafa214e31
+        size: 83335940
         filename: chrome.deb
         only-arches: [x86_64]
         x-checker-data:
@@ -132,7 +132,7 @@ modules:
         dest-filename: stub_sandbox.sh
         commands:
           - 'echo "Stub sandbox ignoring command: $@"'
-          - 'exit 1'
+          - exit 1
       - type: file
         path: chrome.sh
       - type: file
