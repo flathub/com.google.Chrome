@@ -1,5 +1,5 @@
-<!-- Copyright 2017 the Chromium authors, with modifications -->
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 the Chromium authors, with modifications -->
 <component type="desktop">
   <id>com.google.Chrome</id>
   <launchable type="desktop-id">com.google.Chrome.desktop</launchable>
