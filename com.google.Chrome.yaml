@@ -82,24 +82,33 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        # branch: master
         tag: v2021.06
-      # - type: dir
-      #   path: ../../code/zypak
+        commit: 89dd114427a114028f249ed9b2824d083f459eb5
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
 
   - name: flextop
     buildsystem: meson
     sources:
       - type: git
         url: https://github.com/refi64/flextop
+        tag: v2021.07.1
         commit: 9f66dac84388f520ecab5ac4fa60df6343b7db5b
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
 
   - name: cobalt
     buildsystem: meson
     sources:
       - type: git
         url: https://github.com/refi64/cobalt
-        commit: v2021.07.2
+        tag: v2021.07.2
+        commit: 2ef67dc9df354a5714944757e41360ec4e2cd14a
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
 
   - name: chrome
     buildsystem: simple
