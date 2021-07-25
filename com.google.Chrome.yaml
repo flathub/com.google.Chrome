@@ -99,7 +99,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/cobalt
-        commit: v2021.07.1
+        commit: v2021.07.2
 
   - name: chrome
     buildsystem: simple
