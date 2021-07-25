@@ -94,15 +94,22 @@ modules:
         url: https://github.com/refi64/flextop
         commit: 9f66dac84388f520ecab5ac4fa60df6343b7db5b
 
+  - name: cobalt
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://github.com/refi64/cobalt
+        commit: v2021.07.1
+
   - name: chrome
     buildsystem: simple
     build-commands:
       - install -Dm 755 chrome.sh /app/bin/chrome
       - install -Dm 755 apply_extra.sh /app/bin/apply_extra
       - install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox
+      - install -Dm 644 -t /app/etc cobalt.ini
       - install -Dm 644 -t /app/share/flatpak-chrome flatpak_policy.json
       - install -Dm 644 -t /app/share/flatpak-chrome first_run.html
-      - install -Dm 644 -t /app/share/flatpak-chrome mimic_warning.txt
       - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
       - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
       - |
@@ -137,11 +144,11 @@ modules:
       - type: file
         path: apply_extra.sh
       - type: file
+        path: cobalt.ini
+      - type: file
         path: flatpak_policy.json
       - type: file
         path: first_run.html
-      - type: file
-        path: mimic_warning.txt
       - type: file
         path: com.google.Chrome.desktop
       - type: file
