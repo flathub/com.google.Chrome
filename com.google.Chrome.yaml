@@ -104,8 +104,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/cobalt
-        tag: v2021.07.2
-        commit: 2ef67dc9df354a5714944757e41360ec4e2cd14a
+        tag: v2021.07.3
+        commit: a121df576c5d496bb214965a1217dc092876b091
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -132,9 +132,9 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_92.0.4515.131-1_amd64.deb
-        sha256: 6fcc67888aac64047247931d16958973e66291a00f3c204b2af510fcf661d313
-        size: 80213604
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_92.0.4515.159-1_amd64.deb
+        sha256: 05a5406e4564d6fe117e21230551516a7720cb211fc2b9b9367c868cb7c6b653
+        size: 80228636
         filename: chrome.deb
         only-arches: [x86_64]
         x-checker-data:
