@@ -1,6 +1,6 @@
 app-id: com.google.Chrome
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: chrome
 separate-locales: false
@@ -67,6 +67,9 @@ modules:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gtk.git
         tag: 3.24.23
+      # From https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gtk3-werror.patch
+      - type: patch
+        path: gtk3-werror.patch
 
   - name: gtk-settings
     buildsystem: simple
@@ -76,23 +79,12 @@ modules:
       - type: file
         path: gtk-settings.ini
 
-  - name: pipewire
-    buildsystem: meson
-    config-opts:
-      - -Dgstreamer=disabled
-      - -Dman=false
-      - -Dsystemd=false
-    sources:
-      - type: git
-        url: https://github.com/PipeWire/pipewire.git
-        tag: 0.2.7
-
   - name: zypak
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        tag: v2021.06
-        commit: 89dd114427a114028f249ed9b2824d083f459eb5
+        tag: v2021.09.1
+        commit: e09f37ca4ff09827434deba11f9b1f9e1c42dbaf
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
