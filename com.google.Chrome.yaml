@@ -165,6 +165,7 @@ modules:
           dist: stable
           component: main
           package-name: google-chrome-stable
+          is-main-source: true
       - type: script
         dest-filename: stub_sandbox.sh
         commands:
