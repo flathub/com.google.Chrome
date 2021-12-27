@@ -49,6 +49,14 @@ modules:
     subdir: src
     post-install:
       - install -Dm644 ../krb5.conf /app/etc/krb5.conf
+    cleanup:
+      - /bin
+      - /sbin
+      - /include
+      - /share/examples
+      - /share/man
+      - '*.pc'
+      - '*.mo'
     sources:
       - type: archive
         url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.2.tar.gz
