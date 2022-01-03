@@ -1,0 +1,44 @@
+name: ibus-gtk
+config-opts:
+  - --disable-tests
+  - --disable-gtk2
+  - --enable-gtk3
+  - --enable-gtk4
+  - --disable-xim
+  - --disable-wayland
+  - --disable-appindicator
+  - --disable-introspection
+  - --disable-gtk-doc
+  - --disable-memconf
+  - --disable-dconf
+  - --disable-python2
+  - --disable-setup
+  - --with-python=python3
+  - --disable-python-library
+  - --enable-key-snooper
+  - --enable-surrounding-text
+  - --disable-ui
+  - --disable-engine
+  - --disable-emoji-dict
+  - --disable-unicode-dict
+  - --disable-vala
+  - --with-gtk3-im-module-dir=${FLATPAK_DEST}/lib/gtkmodules/3.0.0/immodules
+  - --with-gtk4-im-module-dir=${FLATPAK_DEST}/lib/gtkmodules/4.0.0/immodules
+sources:
+  - type: archive
+    url: https://github.com/ibus/ibus/releases/download/1.5.25/ibus-1.5.25.tar.gz
+    sha256: dea4f663c485267cc3313e40a0bc89b977c397e19644f8ab41df0e6eaec34330
+    x-checker-data:
+      type: anitya
+      project-id: 1352
+      stable-only: true
+      url-template: https://github.com/ibus/ibus/releases/download/$version/ibus-$version.tar.gz
+  - type: shell
+    commands:
+      - sed '/^AM_CONDITIONAL.*ENABLE_DAEMON/ s/true/false/' -i configure.ac
+      - sed '/^SUBDIRS/,/$(NULL)/ s/data\|docs\|ibus\|portal\|tools\|util//' -i Makefile.am
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /share
+  - '*.la'

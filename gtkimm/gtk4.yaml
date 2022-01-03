@@ -1,0 +1,110 @@
+name: gtk4
+buildsystem: meson
+builddir: true
+build-options:
+  cflags: -DG_DISABLE_CAST_CHECKS
+config-opts:
+  - -Dx11-backend=true
+  - -Dwayland-backend=true
+  - -Dbroadway-backend=false
+  - -Dmedia-ffmpeg=disabled
+  - -Dmedia-gstreamer=disabled
+  - -Dprint-cups=enabled
+  - -Dcloudproviders=disabled
+  - -Dsysprof=disabled
+  - -Dtracker=disabled
+  - -Dcolord=disabled
+  - -Dgtk_doc=false
+  - -Dman-pages=false
+  - -Ddebug=false
+  - -Dintrospection=disabled
+  - -Ddemos=false
+  - -Dbuild-examples=false
+  - -Dbuild-tests=false
+sources:
+  - type: archive
+    url: https://download.gnome.org/sources/gtk/4.4/gtk-4.4.1.tar.xz
+    sha256: 0faada983dc6b0bc409cb34c1713c1f3267e67c093f86b1e3b17db6100a3ddf4
+    x-checker-data:
+      type: gnome
+      name: gtk
+      versions:
+        # newer releases require updated libpango
+        <: 4.6.0
+      stable-only: true
+  - type: shell
+    commands:
+      - sed '/^printbackends_subdir/ s/gtk-4\.0/gtkmodules/' -i modules/printbackends/meson.build
+cleanup:
+  - /bin
+  - /include
+  - /lib/pkgconfig
+  - /share/gettext
+  - /share/gtk-4.0/gtk4builder.rng
+  - /share/gtk-4.0/valgrind
+modules:
+  - name: graphene
+    buildsystem: meson
+    config-opts:
+      - -Dintrospection=disabled
+      - -Dtests=false
+      - -Dinstalled_tests=false
+    sources:
+      - type: archive
+        url: https://github.com/ebassi/graphene/releases/download/1.10.6/graphene-1.10.6.tar.xz
+        sha256: 80ae57723e4608e6875626a88aaa6f56dd25df75024bd16e9d77e718c3560b25
+        x-checker-data:
+          type: anitya
+          project-id: 12758
+          stable-only: true
+          url-template: https://github.com/ebassi/graphene/releases/download/$version/graphene-$version.tar.xz
+    cleanup:
+      - /include
+      - /lib/graphene-1.0
+      - /lib/pkgconfig
+  - name: hicolor-icon-theme
+    sources:
+      - type: archive
+        url: https://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.17.tar.xz
+        sha256: 317484352271d18cbbcfac3868eab798d67fff1b8402e740baa6ff41d588a9d8
+        x-checker-data:
+          type: anitya
+          project-id: 1316
+          stable-only: true
+          url-template: https://icon-theme.freedesktop.org/releases/hicolor-icon-theme-$version.tar.xz
+    cleanup:
+      - '*'
+  - name: sassc
+    sources:
+      - type: archive
+        url: https://github.com/sass/sassc/archive/3.6.2/sassc-3.6.2.tar.gz
+        sha256: 608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03
+        x-checker-data:
+          type: anitya
+          project-id: 12485
+          stable-only: true
+          url-template: https://github.com/sass/sassc/archive/$version/sassc-$version.tar.gz
+      - type: shell
+        commands:
+          - autoreconf -fiv
+    cleanup:
+      - '*'
+    modules:
+      - name: libsass
+        config-opts:
+          - --enable-shared
+          - --disable-static
+        sources:
+          - type: archive
+            url: https://github.com/sass/libsass/archive/3.6.5/libsass-3.6.5.tar.gz
+            sha256: 89d8f2c46ae2b1b826b58ce7dde966a176bac41975b82e84ad46b01a55080582
+            x-checker-data:
+              type: anitya
+              project-id: 11766
+              stable-only: true
+              url-template: https://github.com/sass/libsass/archive/$version/libsass-$version.tar.gz
+          - type: shell
+            commands:
+              - autoreconf -fiv
+        cleanup:
+          - '*'

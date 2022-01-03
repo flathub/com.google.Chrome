@@ -1,0 +1,32 @@
+name: fcitx5-gtk
+buildsystem: cmake-ninja
+config-opts:
+  - -DGTK3_IM_MODULEDIR=${FLATPAK_DEST}/lib/gtkmodules/3.0.0/immodules
+  - -DGTK4_IM_MODULEDIR=${FLATPAK_DEST}/lib/gtkmodules/4.0.0/immodules
+  - -DENABLE_GIR=OFF
+  - -DENABLE_GTK2_IM_MODULE=OFF
+  - -DENABLE_GTK3_IM_MODULE=ON
+  - -DENABLE_GTK4_IM_MODULE=ON
+  - -DENABLE_SNOOPER=ON
+sources:
+  - type: archive
+    url: https://github.com/fcitx/fcitx5-gtk/archive/5.0.10/fcitx5-gtk-5.0.10.tar.gz
+    sha256: 70d189d58d78ebf298162f44f506d68a2489c092ad938ed34429c272066e2eef
+    x-checker-data:
+      type: anitya
+      project-id: 138235
+      stable-only: true
+      url-template: https://github.com/fcitx/fcitx5-gtk/archive/$version/fcitx5-gtk-$version.tar.gz
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+modules:
+  - name: extra-cmake-modules
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://download.kde.org/stable/frameworks/5.89/extra-cmake-modules-5.89.0.tar.xz
+        sha256: 3dd7229a225923b8570a333ee6e4a07b0f5f700ea9538fdeb22cc3cbba69f02f
+    cleanup:
+      - '*'

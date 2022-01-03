@@ -1,0 +1,9 @@
+name: gtkimm
+buildsystem: simple
+build-commands:
+  - gio-querymodules ${FLATPAK_DEST}/lib/gtkmodules/4.0.0/immodules
+  - gtk-query-immodules-3.0 ${FLATPAK_DEST}/lib/gtkmodules/3.0.0/immodules/*.so > ${FLATPAK_DEST}/lib/gtkmodules/3.0.0/immodules/immodules.cache
+modules:
+  - gtk4.yaml
+  - fcitx5-gtk.yaml
+  - ibus-gtk.yaml
