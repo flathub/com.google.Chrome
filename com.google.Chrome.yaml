@@ -165,7 +165,6 @@ modules:
       - install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox
       - install -Dm 644 -t /app/etc cobalt.ini
       - install -Dm 644 -t /app/share/flatpak-chrome flatpak_policy.json
-      - install -Dm 644 -t /app/share/flatpak-chrome first_run.html
       - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
       - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
       - |
@@ -204,8 +203,6 @@ modules:
         path: cobalt.ini
       - type: file
         path: flatpak_policy.json
-      - type: file
-        path: first_run.html
       - type: file
         path: com.google.Chrome.desktop
       - type: file
