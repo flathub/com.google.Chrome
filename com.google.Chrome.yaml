@@ -2,6 +2,8 @@ app-id: com.google.Chrome
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
+base: org.chromium.Chromium.BaseApp
+base-version: '21.08'
 command: chrome
 separate-locales: false
 build-options:
@@ -43,99 +45,6 @@ finish-args:
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
 modules:
-  - libsecret.json
-
-  - name: kerberos
-    subdir: src
-    post-install:
-      - install -Dm644 ../krb5.conf /app/etc/krb5.conf
-    cleanup:
-      - /bin
-      - /sbin
-      - /include
-      - /share/examples
-      - /share/man
-      - '*.pc'
-      - '*.mo'
-    sources:
-      - type: archive
-        url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.3.tar.gz
-        sha256: 56d04863cfddc9d9eb7af17556e043e3537d41c6e545610778676cf551b9dcd0
-        x-checker-data:
-          type: html
-          url: https://kerberos.org/dist/
-          version-pattern: Kerberos V5 Release ([\d\.-]*) - current release
-          url-template: https://kerberos.org/dist/krb5/$version0.$version1/krb5-$version.tar.gz
-      - type: file
-        path: krb5.conf
-
-  - name: libcups
-    make-args: [libs]
-    no-make-install: true
-    post-install:
-      - make install-headers install-libs
-    cleanup:
-      - /include
-    sources:
-      - type: git
-        url: https://github.com/OpenPrinting/cups.git
-        tag: v2.4.0
-        commit: 7b114a26fe8bbe3c280d3ac743d30e5cb8f6ef93
-
-  - name: gtk-cups-backend
-    buildsystem: meson
-    make-args: [modules/printbackends/libprintbackend-cups.so]
-    no-make-install: true
-    post-install:
-      - install -Dm 755 modules/printbackends/libprintbackend-cups.so -t /app/lib/gtkmodules/3.0.0/printbackends/
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/gtk.git
-        tag: 3.24.23
-      # From https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gtk3-werror.patch
-      - type: patch
-        path: gtk3-werror.patch
-
-  - name: gtk-settings
-    buildsystem: simple
-    build-commands:
-      - install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini
-    sources:
-      - type: file
-        path: gtk-settings.ini
-
-  - name: zypak
-    sources:
-      - type: git
-        url: https://github.com/refi64/zypak
-        tag: v2021.09.1
-        commit: e09f37ca4ff09827434deba11f9b1f9e1c42dbaf
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
-
-  - name: flextop
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/refi64/flextop
-        tag: v2021.07.1
-        commit: 9f66dac84388f520ecab5ac4fa60df6343b7db5b
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
-
-  - name: cobalt
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/refi64/cobalt
-        tag: v2021.11.1
-        commit: 8a49246a97fcb989b370c20b204324862d79541f
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
-
   - name: dconf
     buildsystem: meson
     config-opts:
@@ -153,9 +62,23 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz
         sha256: cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533
+        x-checker-data:
+          type: gnome
+          name: dconf
+          stable-only: true
       # From: https://src.fedoraproject.org/rpms/dconf
       - type: patch
         path: dconf-override.patch
+
+  - name: zypak
+    sources:
+      - type: git
+        url: https://github.com/refi64/zypak
+        tag: v2021.09.1
+        commit: e09f37ca4ff09827434deba11f9b1f9e1c42dbaf
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
 
   - name: chrome
     buildsystem: simple
