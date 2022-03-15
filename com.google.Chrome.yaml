@@ -59,8 +59,8 @@ modules:
       - '*.mo'
     sources:
       - type: archive
-        url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.2.tar.gz
-        sha256: 10453fee4e3a8f8ce6129059e5c050b8a65dab1c257df68b99b3112eaa0cdf6a
+        url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.3.tar.gz
+        sha256: 56d04863cfddc9d9eb7af17556e043e3537d41c6e545610778676cf551b9dcd0
         x-checker-data:
           type: html
           url: https://kerberos.org/dist/
@@ -179,9 +179,9 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_98.0.4758.102-1_amd64.deb
-        sha256: 864ffdeb9402ee82da2786e99c58547598762b281f34a14d8ad670ece654d95d
-        size: 90840348
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_99.0.4844.74-1_amd64.deb
+        sha256: 0444893153d4b3b628c6465c48e7c49f06649b101ce5ab066d59b14c363ef9f7
+        size: 82966576
         filename: chrome.deb
         only-arches: [x86_64]
         x-checker-data:
