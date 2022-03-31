@@ -87,7 +87,6 @@ modules:
       - install -Dm 755 apply_extra.sh /app/bin/apply_extra
       - install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox
       - install -Dm 644 -t /app/etc cobalt.ini
-      - install -Dm 644 -t /app/share/flatpak-chrome flatpak_policy.json
       - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
       - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
       - |
@@ -124,8 +123,6 @@ modules:
         path: apply_extra.sh
       - type: file
         path: cobalt.ini
-      - type: file
-        path: flatpak_policy.json
       - type: file
         path: com.google.Chrome.desktop
       - type: file
