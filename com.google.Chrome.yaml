@@ -74,8 +74,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        tag: v2022.03
-        commit: 8424c6bcf909ca2031ebc6537d324bb64772266e
+        tag: v2022.04
+        commit: 55a60d110301e8dd37b631503c3524ab7baaf7aa
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -100,9 +100,9 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_101.0.4951.41-1_amd64.deb
-        sha256: 78d24e94017eb94ab771d49bcd4dd0684f86ca05bc40250fe3151040aefedf8a
-        size: 84369852
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_101.0.4951.54-1_amd64.deb
+        sha256: bedc9782f008645c3bcda9edbeeabf52ef15ed1d736a697819e56f2e5c37dad4
+        size: 88719356
         filename: chrome.deb
         only-arches: [x86_64]
         x-checker-data:
