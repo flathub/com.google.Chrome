@@ -44,6 +44,7 @@ finish-args:
   - --env=GSETTINGS_BACKEND=dconf
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
+  - --persist=.pki
 modules:
   - name: dconf
     buildsystem: meson
