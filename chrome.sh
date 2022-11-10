@@ -13,4 +13,9 @@ for policy_type in managed recommended enrollment; do
   fi
 done
 
-exec cobalt "$@"
+if [[ $(gsettings get org.gnome.desktop.interface color-scheme) = "'prefer-dark'" ]] 
+then
+  exec cobalt "$@" --force-dark-mode --enable-features=WebUIDarkMode
+else
+  exec cobalt "$@"
+fi
