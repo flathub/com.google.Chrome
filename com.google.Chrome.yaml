@@ -46,6 +46,9 @@ finish-args:
   - --env=GSETTINGS_BACKEND=dconf
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
+  # To allow installing Progressive Web Apps (PWAs)
+  - --filesystem=~/.local/share/applications
+  - --filesystem=~/.local/share/icons
 modules:
   - name: dconf
     buildsystem: meson
