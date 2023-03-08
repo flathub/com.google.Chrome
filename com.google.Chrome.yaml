@@ -30,6 +30,7 @@ finish-args:
   - --talk-name=org.gnome.SessionManager
   - --system-talk-name=org.freedesktop.Avahi
   - --own-name=org.mpris.MediaPlayer2.chromium.*
+  - --own-name=org.kde.*
   - --filesystem=/run/.heim_org.h5l.kcm-socket
   - --filesystem=host-etc
   - --filesystem=xdg-run/pipewire-0
