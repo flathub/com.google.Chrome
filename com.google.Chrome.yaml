@@ -21,6 +21,7 @@ finish-args:
   - --socket=x11
   - --socket=wayland
   - --require-version=1.8.2
+  - --system-talk-name=org.bluez
   - --system-talk-name=org.freedesktop.UPower
   - --talk-name=org.freedesktop.FileManager1
   - --talk-name=org.freedesktop.Notifications
