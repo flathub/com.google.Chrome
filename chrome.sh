@@ -13,4 +13,6 @@ for policy_type in managed recommended enrollment; do
   fi
 done
 
+touch "${XDG_CONFIG_HOME}/google-chrome/WidevineCdm"
+
 exec cobalt "$@"
