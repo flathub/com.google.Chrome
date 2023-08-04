@@ -28,6 +28,7 @@ finish-args:
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.gnome.SessionManager
+  - --talk-name=org.kde.StatusNotifierWatcher
   - --system-talk-name=org.freedesktop.Avahi
   - --own-name=org.mpris.MediaPlayer2.chromium.*
   - --filesystem=/run/.heim_org.h5l.kcm-socket
