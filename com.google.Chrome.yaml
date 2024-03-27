@@ -97,10 +97,6 @@ modules:
         for icon in 16 24 32 48 64 128 256; do
           install -Dm 644 com.google.Chrome-$icon.png /app/share/icons/hicolor/${icon}x${icon}/apps/com.google.Chrome.png
         done
-
-      # For extra-data to be able to extract the .deb
-      - install -Dm 755 /{usr,app}/bin/ar
-      - cp /usr/lib/$(gcc --print-multiarch)/libbfd-*.so /app/lib
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
