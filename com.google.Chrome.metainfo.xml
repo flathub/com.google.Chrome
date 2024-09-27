@@ -1,226 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2017 the Chromium authors, with modifications -->
+<?xml version="1.0" encoding="UTF-8"?><!-- Copyright 2017 the Chromium authors, with modifications -->
 <component type="desktop">
   <id>com.google.Chrome</id>
   <launchable type="desktop-id">com.google.Chrome.desktop</launchable>
   <name>Google Chrome</name>
-  <developer_name>Google</developer_name>
-  <summary>The web browser from Google</summary>
+  <developer id="com.google">
+    <name>Google</name>
+  </developer>
+  <summary>The browser built to be yours</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
   <url type="homepage">https://chrome.google.com/</url>
+  <content_rating type="oars-1.1" />
+  <update_contact>rymg19_at_gmail.com</update_contact>
   <description>
-    <p>
-    Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster,
-    safer, and easier.
-   </p>
-   <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Google.</p>
+    <p>Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.</p>
+    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Google.</p>
   </description>
   <screenshots>
     <screenshot type="default">
-      <image>https://www.gstatic.com/chrome/appstream/chrome-2.png</image>
+      <image>https://www.google.com/chrome/static/images/dev-components/chrome-gallery-1.webp</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.google.com/chrome/static/images/dev-components/chrome-gallery-3.webp</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.google.com/chrome/static/images/dev-components/chrome-gallery-5.webp</image>
     </screenshot>
   </screenshots>
   <releases>
-    <release version="129.0.6668.70-1" date="2024-09-23">
-      <description></description>
-    </release>
-    <release version="129.0.6668.58-1" date="2024-09-16">
-      <description/>
-    </release>
-    <release version="128.0.6613.137-1" date="2024-09-10">
-      <description/>
-    </release>
-    <release version="128.0.6613.119-1" date="2024-08-30">
-      <description/>
-    </release>
-    <release version="128.0.6613.113-1" date="2024-08-28">
-      <description/>
-    </release>
-    <release version="128.0.6613.84-1" date="2024-08-21">
-      <description/>
-    </release>
-    <release version="127.0.6533.119-1" date="2024-08-13">
-      <description/>
-    </release>
-    <release version="127.0.6533.99-1" date="2024-08-05">
-      <description/>
-    </release>
-    <release version="127.0.6533.88-1" date="2024-07-29">
-      <description/>
-    </release>
-    <release version="127.0.6533.72-1" date="2024-07-22">
-      <description/>
-    </release>
-    <release version="126.0.6478.182-1" date="2024-07-15">
-      <description/>
-    </release>
-    <release version="126.0.6478.126-1" date="2024-06-22">
-      <description/>
-    </release>
-    <release version="126.0.6478.114-1" date="2024-06-18">
-      <description/>
-    </release>
-    <release version="126.0.6478.61-1" date="2024-06-12">
-      <description/>
-    </release>
-    <release version="126.0.6478.55-1" date="2024-06-11">
-      <description/>
-    </release>
-    <release version="125.0.6422.141-1" date="2024-05-29">
-      <description/>
-    </release>
-    <release version="125.0.6422.112-1" date="2024-05-22">
-      <description/>
-    </release>
-    <release version="125.0.6422.76-1" date="2024-05-21">
-      <description/>
-    </release>
-    <release version="125.0.6422.60-1" date="2024-05-14"/>
-    <release version="124.0.6367.207-1" date="2024-05-10"/>
-    <release version="124.0.6367.201-1" date="2024-05-08"/>
-    <release version="124.0.6367.155-1" date="2024-05-06"/>
-    <release version="124.0.6367.118-1" date="2024-04-30"/>
-    <release version="124.0.6367.91-1" date="2024-04-24"/>
-    <release version="124.0.6367.78-1" date="2024-04-22"/>
-    <release version="124.0.6367.60-1" date="2024-04-12"/>
-    <release version="123.0.6312.122-1" date="2024-04-08"/>
-    <release version="123.0.6312.105-1" date="2024-04-01"/>
-    <release version="123.0.6312.86-1" date="2024-03-25"/>
-    <release version="123.0.6312.58-1" date="2024-03-18"/>
-    <release version="122.0.6261.128-1" date="2024-03-12"/>
-    <release version="122.0.6261.111-1" date="2024-03-05"/>
-    <release version="122.0.6261.94-1" date="2024-02-26"/>
-    <release version="122.0.6261.69-1" date="2024-02-22"/>
-    <release version="122.0.6261.57-1" date="2024-02-19"/>
-    <release version="121.0.6167.184-1" date="2024-02-12"/>
-    <release version="121.0.6167.160-1" date="2024-02-05"/>
-    <release version="121.0.6167.139-1" date="2024-01-30"/>
-    <release version="121.0.6167.85-1" date="2024-01-20"/>
-    <release version="120.0.6099.224-1" date="2024-01-12"/>
-    <release version="120.0.6099.216-1" date="2024-01-08"/>
-    <release version="120.0.6099.199-1" date="2024-01-02"/>
-    <release version="120.0.6099.129-1" date="2023-12-19"/>
-    <release version="120.0.6099.109-1" date="2023-12-11"/>
-    <release version="120.0.6099.71-1" date="2023-12-05"/>
-    <release version="119.0.6045.199-1" date="2023-11-27"/>
-    <release version="119.0.6045.159-1" date="2023-11-13"/>
-    <release version="119.0.6045.123-1" date="2023-11-07"/>
-    <release version="119.0.6045.105-1" date="2023-10-30"/>
-    <release version="118.0.5993.117-1" date="2023-10-23"/>
-    <release version="118.0.5993.88-1" date="2023-10-16"/>
-    <release version="118.0.5993.70-1" date="2023-10-09"/>
-    <release version="117.0.5938.149-1" date="2023-10-02"/>
-    <release version="117.0.5938.132-1" date="2023-09-27"/>
-    <release version="117.0.5938.92-1" date="2023-09-20"/>
-    <release version="117.0.5938.62-1" date="2023-09-09"/>
-    <release version="116.0.5845.187-1" date="2023-09-09"/>
-    <release version="116.0.5845.179-1" date="2023-09-04"/>
-    <release version="116.0.5845.140-1" date="2023-08-25"/>
-    <release version="116.0.5845.110-1" date="2023-08-18"/>
-    <release version="116.0.5845.96-1" date="2023-08-11"/>
-    <release version="115.0.5790.170-1" date="2023-08-01"/>
-    <release version="115.0.5790.110-1" date="2023-07-25"/>
-    <release version="115.0.5790.102-1" date="2023-07-20"/>
-    <release version="115.0.5790.98-1" date="2023-07-15"/>
-    <release version="114.0.5735.198-1" date="2023-06-24"/>
-    <release version="114.0.5735.133-1" date="2023-06-13"/>
-    <release version="113.0.5672.126-1" date="2023-05-15"/>
-    <release version="113.0.5672.92-1" date="2023-05-05"/>
-    <release version="112.0.5615.165-1" date="2023-04-18"/>
-    <release version="112.0.5615.121-1" date="2023-04-13"/>
-    <release version="112.0.5615.49-1" date="2023-03-28"/>
-    <release version="111.0.5563.146-1" date="2023-03-24"/>
-    <release version="111.0.5563.110-1" date="2023-03-21"/>
-    <release version="111.0.5563.64-1" date="2023-03-04"/>
-    <release version="110.0.5481.177-1" date="2023-02-21"/>
-    <release version="110.0.5481.100-1" date="2023-02-14"/>
-    <release version="110.0.5481.77-1" date="2023-01-31"/>
-    <release version="109.0.5414.119-1" date="2023-01-23"/>
-    <release version="109.0.5414.74-1" date="2023-01-04"/>
-    <release version="108.0.5359.124-1" date="2022-12-12"/>
-    <release version="108.0.5359.98-1" date="2022-12-06"/>
-    <release version="108.0.5359.94-1" date="2022-12-01"/>
-    <release version="108.0.5359.71-1" date="2022-11-29"/>
-    <release version="107.0.5304.121-1" date="2022-11-23"/>
-    <release version="107.0.5304.110-1" date="2022-11-08"/>
-    <release version="107.0.5304.87-1" date="2022-10-26"/>
-    <release version="107.0.5304.68-1" date="2022-10-22"/>
-    <release version="106.0.5249.119-1" date="2022-10-10"/>
-    <release version="106.0.5249.91-1" date="2022-09-30"/>
-    <release version="106.0.5249.61-1" date="2022-09-23"/>
-    <release version="105.0.5195.125-1" date="2022-09-09"/>
-    <release version="105.0.5195.102-1" date="2022-09-02"/>
-    <release version="105.0.5195.52-1" date="2022-08-23"/>
-    <release version="104.0.5112.101-1" date="2022-08-15"/>
-    <release version="104.0.5112.79-1" date="2022-07-30"/>
-    <release version="103.0.5060.134-1" date="2022-07-18"/>
-    <release version="103.0.5060.114-1" date="2022-07-02"/>
-    <release version="103.0.5060.53-1" date="2022-06-15"/>
-    <release version="102.0.5005.115-1" date="2022-06-08"/>
-    <release version="102.0.5005.61-1" date="2022-05-17"/>
-    <release version="101.0.4951.64-1" date="2022-05-10"/>
-    <release version="101.0.4951.54-1" date="2022-04-30"/>
-    <release version="101.0.4951.41-1" date="2022-04-20"/>
-    <release version="100.0.4896.127-1" date="2022-04-13"/>
-    <release version="100.0.4896.88-1" date="2022-04-08"/>
-    <release version="100.0.4896.75-1" date="2022-04-01"/>
-    <release version="100.0.4896.60-1" date="2022-03-26"/>
-    <release version="99.0.4844.84-1" date="2022-03-24"/>
-    <release version="99.0.4844.82-1" date="2022-03-19"/>
-    <release version="99.0.4844.74-1" date="2022-03-14"/>
-    <release version="98.0.4758.102-1" date="2022-02-11"/>
-    <release version="98.0.4758.80-1" date="2022-01-28"/>
-    <release version="97.0.4692.99-1" date="2022-01-19"/>
-    <release version="97.0.4692.71-1" date="2021-12-29"/>
-    <release version="96.0.4664.110-1" date="2021-12-12"/>
-    <release version="96.0.4664.93-1" date="2021-12-03"/>
-    <release version="96.0.4664.45-1" date="2021-11-11"/>
-    <release version="95.0.4638.69-1" date="2021-10-28"/>
-    <release version="95.0.4638.54-1" date="2021-10-16"/>
-    <release version="94.0.4606.81-1" date="2021-10-07"/>
-    <release version="94.0.4606.71-1" date="2021-09-30"/>
-    <release version="94.0.4606.61-1" date="2021-09-23"/>
-    <release version="94.0.4606.54-1" date="2021-09-18"/>
-    <release version="93.0.4577.82-1" date="2021-09-11"/>
-    <release version="93.0.4577.63-1" date="2021-08-27"/>
-    <release version="92.0.4515.159-1" date="2021-08-13"/>
-    <release version="92.0.4515.131-1" date="2021-07-30"/>
-    <release version="92.0.4515.107-1" date="2021-07-18"/>
-    <release version="91.0.4472.164-1" date="2021-07-14"/>
-    <release version="91.0.4472.114" date="2021-06-17"/>
-    <release version="91.0.4472.106" date="2021-06-14"/>
-    <release version="91.0.4472.101" date="2021-06-09"/>
-    <release version="91.0.4472.77" date="2021-05-25"/>
-    <release version="90.0.4430.212" date="2021-05-08"/>
-    <release version="90.0.4430.93" date="2021-04-24"/>
-    <release version="90.0.4430.85" date="2021-04-20"/>
-    <release version="90.0.4430.72" date="2021-04-13"/>
-    <release version="89.0.4389.128" date="2021-04-12"/>
-    <release version="89.0.4389.114" date="2021-03-29"/>
-    <release version="89.0.4389.90" date="2021-03-12"/>
-    <release version="89.0.4389.82" date="2021-03-05"/>
-    <release version="89.0.4389.72" date="2021-02-27"/>
-    <release version="88.0.4324.182" date="2021-02-16"/>
-    <release version="88.0.4324.150" date="2021-02-04"/>
-    <release version="88.0.4324.146" date="2021-02-02"/>
-    <release version="88.0.4324.96" date="2021-01-19"/>
-    <release version="87.0.4280.141" date="2021-01-07"/>
-    <release version="87.0.4280.88" date="2020-12-02"/>
-    <release version="87.0.4280.66" date="2020-11-17"/>
-    <release version="86.0.4240.198" date="2020-11-11"/>
-    <release version="86.0.4240.193" date="2020-11-07"/>
-    <release version="86.0.4240.183" date="2020-11-02"/>
-    <release version="86.0.4240.111" date="2020-10-20"/>
-    <release version="86.0.4240.75" date="2020-10-05"/>
-    <release version="85.0.4183.83" date="2020-08-25"/>
-    <release version="84.0.4147.135" date="2020-08-18"/>
-    <release version="84.0.4147.125" date="2020-08-10"/>
-    <release version="84.0.4147.105" date="2020-07-28"/>
-    <release version="84.0.4147.89" date="2020-07-14"/>
-    <release version="83.0.4103.116" date="2020-06-22"/>
+    <release date="2024-09-23" version="129.0.6668.70-1" />
+    <release date="2024-09-16" version="129.0.6668.58-1" />
+    <release date="2024-09-10" version="128.0.6613.137-1" />
+    <release date="2024-08-30" version="128.0.6613.119-1" />
+    <release date="2024-08-28" version="128.0.6613.113-1" />
   </releases>
-  <content_rating type="oars-1.1">
-  </content_rating>
-  <update_contact>rymg19_at_gmail.com</update_contact>
 </component>
