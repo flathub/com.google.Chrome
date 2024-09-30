@@ -93,10 +93,7 @@ modules:
       - install -Dm 644 -t /app/etc cobalt.ini
       - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
       - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
-      - |
-        for icon in 16 24 32 48 64 128 256; do
-          install -Dm 644 com.google.Chrome-$icon.png /app/share/icons/hicolor/${icon}x${icon}/apps/com.google.Chrome.png
-        done
+      - install -Dm 644 com.google.Chrome.svg /app/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
@@ -128,16 +125,4 @@ modules:
       - type: file
         path: com.google.Chrome.metainfo.xml
       - type: file
-        path: icons/com.google.Chrome-16.png
-      - type: file
-        path: icons/com.google.Chrome-24.png
-      - type: file
-        path: icons/com.google.Chrome-32.png
-      - type: file
-        path: icons/com.google.Chrome-48.png
-      - type: file
-        path: icons/com.google.Chrome-64.png
-      - type: file
-        path: icons/com.google.Chrome-128.png
-      - type: file
-        path: icons/com.google.Chrome-256.png
+        path: com.google.Chrome.svg
