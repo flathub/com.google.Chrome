@@ -42,6 +42,9 @@ finish-args:
   # For GNOME proxy resolution
   - --filesystem=xdg-run/dconf
   - --filesystem=~/.config/dconf:ro
+  # For add PWAs entries
+  - --filesystem=~/.local/share/applications
+  - --filesystem=~/.local/share/icons
   - --talk-name=ca.desrt.dconf
   - --env=DCONF_USER_CONFIG_DIR=.config/dconf
   - --env=GIO_EXTRA_MODULES=/app/lib/gio/modules
