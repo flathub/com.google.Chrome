@@ -126,3 +126,14 @@ modules:
         path: com.google.Chrome.metainfo.xml
       - type: file
         path: com.google.Chrome.svg
+add-extensions:
+  com.google.Chrome.nssdb:
+    version: '1.0'
+    directory: nssdb
+    add-ld-path: lib
+    merge-dirs: nssdb;help
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+cleanup-commands:
+  - mkdir -p ${FLATPAK_DEST}/nssdb
