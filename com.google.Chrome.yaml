@@ -95,6 +95,8 @@ modules:
       - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
       - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
       - install -Dm 644 com.google.Chrome.svg /app/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
+      # needed to manage NSSDB
+      - install -Dm 755 /usr/bin/modutil /app/bin/modutil
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
@@ -129,10 +131,10 @@ modules:
         path: com.google.Chrome.svg
 add-extensions:
   com.google.Chrome.cripto:
-    version: '1.0'
+    version: '0.1.0'
     directory: cripto
     add-ld-path: lib
-    merge-dirs: lib;modules;bin
+    merge-dirs: modules;
     subdirectories: true
     no-autodownload: true
     autodelete: true

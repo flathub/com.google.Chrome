@@ -15,4 +15,19 @@ done
 
 touch "${XDG_CONFIG_HOME}/google-chrome/WidevineCdm"
 
+# enable PKCS11 modules on extensions
+modules_root=/app/cripto/modules
+if [ -d "$modules_root" ]; then
+  find "$modules_root" -name "*.module" -exec ln -sf '{}' /etc/pkcs11/modules \;
+fi
+
+#check the NSSDB for the library p11-kit-proxy.so
+if ! [ -d "$HOME/.pki/nssdb" ]; then
+    mkdir -p "$HOME/.pki/nssdb"
+    /app/bin/modutil -dbdir sql:"$HOME/.pki/nssdb" -create -force
+fi
+if ! /app/bin/modutil -dbdir sql:$HOME/.pki/nssdb -list 2>/dev/null | grep -q "p11-kit-proxy"; then
+  /app/bin/modutil -dbdir sql:$HOME/.pki/nssdb -add "p11-kit-proxy" -libfile /usr/lib/x86_64-linux-gnu/p11-kit-proxy.so -force
+fi
+
 exec cobalt "$@"
