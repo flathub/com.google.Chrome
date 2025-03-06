@@ -48,6 +48,7 @@ finish-args:
   - --env=GSETTINGS_BACKEND=dconf
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
+  - --persist=.pki
 modules:
   - name: dconf
     buildsystem: meson
@@ -127,13 +128,13 @@ modules:
       - type: file
         path: com.google.Chrome.svg
 add-extensions:
-  com.google.Chrome.nssdb:
+  com.google.Chrome.cripto:
     version: '1.0'
-    directory: nssdb
+    directory: cripto
     add-ld-path: lib
-    merge-dirs: nssdb;help
+    merge-dirs: lib;modules;bin
     subdirectories: true
     no-autodownload: true
     autodelete: true
 cleanup-commands:
-  - mkdir -p ${FLATPAK_DEST}/nssdb
+  - mkdir -p ${FLATPAK_DEST}/cripto
