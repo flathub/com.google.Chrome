@@ -16,7 +16,7 @@ done
 touch "${XDG_CONFIG_HOME}/google-chrome/WidevineCdm"
 
 # enable PKCS11 modules on extensions
-modules_root=/app/cripto/modules
+modules_root=/app/pki/modules
 if [ -d "$modules_root" ]; then
   find "$modules_root" -name "*.module" -exec ln -sf '{}' /etc/pkcs11/modules \;
 fi
