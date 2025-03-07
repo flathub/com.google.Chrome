@@ -130,13 +130,13 @@ modules:
       - type: file
         path: com.google.Chrome.svg
 add-extensions:
-  com.google.Chrome.cripto:
+  com.google.Chrome.pki:
     version: '0.1.0'
-    directory: cripto
+    directory: pki
     add-ld-path: lib
     merge-dirs: modules;
     subdirectories: true
     no-autodownload: true
     autodelete: true
 cleanup-commands:
-  - mkdir -p ${FLATPAK_DEST}/cripto
+  - mkdir -p ${FLATPAK_DEST}/pki
