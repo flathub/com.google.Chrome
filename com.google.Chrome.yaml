@@ -97,9 +97,9 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_138.0.7204.49-1_amd64.deb
-        sha256: 147623a3cacf9abb89584a479e4247b391edd0d3f61b019228d61b0c2b509926
-        size: 118033016
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_138.0.7204.92-1_amd64.deb
+        sha256: f4769422f244c3a3ea8a7127a5a9bf0e1e7ee973c9da8bbe8fc25f85cee777f1
+        size: 118175608
         filename: chrome.deb
         only-arches: [x86_64]
         x-checker-data:
