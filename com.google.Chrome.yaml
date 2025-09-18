@@ -64,8 +64,8 @@ modules:
       - '*.pc'
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz
-        sha256: cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533
+        url: https://download.gnome.org/sources/dconf/0.49/dconf-0.49.0.tar.xz
+        sha256: 16a47e49a58156dbb96578e1708325299e4c19eea9be128d5bd12fd0963d6c36
         x-checker-data:
           type: gnome
           name: dconf
@@ -97,9 +97,9 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_140.0.7339.127-1_amd64.deb
-        sha256: 640db702ca871f39d1a1e810943bcf46f51f800edb3d0a761cc11316e02ca80f
-        size: 120620528
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_140.0.7339.185-1_amd64.deb
+        sha256: 70f01b0d57afaffbed0702e7f9b70f9901cd7cbae1f8e830deb0ca579a700763
+        size: 120764812
         filename: chrome.deb
         only-arches: [x86_64]
         x-checker-data:
