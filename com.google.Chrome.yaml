@@ -48,6 +48,7 @@ finish-args:
   - --env=GSETTINGS_BACKEND=dconf
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
+  - --persist=.pki
 modules:
   - name: dconf
     buildsystem: meson
@@ -94,6 +95,8 @@ modules:
       - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
       - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
       - install -Dm 644 com.google.Chrome.svg /app/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
+      # needed to manage NSSDB
+      - install -Dm 755 /usr/bin/modutil /app/bin/modutil
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
@@ -126,3 +129,14 @@ modules:
         path: com.google.Chrome.metainfo.xml
       - type: file
         path: com.google.Chrome.svg
+add-extensions:
+  com.google.Chrome.pki:
+    version: '0.1.0'
+    directory: pki
+    add-ld-path: lib
+    merge-dirs: modules;
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+cleanup-commands:
+  - mkdir -p ${FLATPAK_DEST}/pki
