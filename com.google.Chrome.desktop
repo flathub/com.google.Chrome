@@ -107,6 +107,7 @@ Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
 Exec=/app/bin/chrome %U
 StartupNotify=true
+StartupWMClass=google-chrome
 Terminal=false
 Icon=com.google.Chrome
 Type=Application
