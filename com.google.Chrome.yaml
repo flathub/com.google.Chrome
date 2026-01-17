@@ -93,7 +93,7 @@ modules:
       - install -Dm 644 -t /app/etc cobalt.ini
       - install -Dm 644 -t /app/share/applications com.google.Chrome.desktop
       - install -Dm 644 -t /app/share/metainfo com.google.Chrome.metainfo.xml
-      - install -Dm 644 com.google.Chrome.svg /app/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
+      - install -Dm 644 -t /app/share/icons/hicolor/scalable/apps/ com.google.Chrome.svg
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
