@@ -48,6 +48,8 @@ finish-args:
   - --env=GSETTINGS_BACKEND=dconf
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
+  # To access to notification icon
+  - --filesystem=/tmp
 modules:
   - name: dconf
     buildsystem: meson
