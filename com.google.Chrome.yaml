@@ -109,6 +109,20 @@ modules:
           component: main
           package-name: google-chrome-stable
           is-main-source: true
+      - type: extra-data
+        # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-arm64/Packages
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_151.0.7922.71-1_arm64.deb
+        sha256: d8d3e1bfc92d38751154d3d30dfcb4e8c8a25e630d8a53d60b06b034b55e9aa4
+        size: 132151632
+        filename: chrome.deb
+        only-arches: [aarch64]
+        x-checker-data:
+          type: debian-repo
+          root: https://dl.google.com/linux/chrome/deb
+          dist: stable
+          component: main
+          package-name: google-chrome-stable
+          is-main-source: true
       - type: script
         dest-filename: stub_sandbox.sh
         commands:
