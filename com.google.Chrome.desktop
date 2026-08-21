@@ -105,12 +105,13 @@ Comment[vi]=Truy cập Internet
 Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
-Exec=/app/bin/chrome %U
+Exec=/app/bin/chrome --class=com.google.Chrome %U
 StartupNotify=true
 StartupWMClass=google-chrome
 Terminal=false
 Icon=com.google.Chrome
 Type=Application
+StartupWMClass=com.google.Chrome
 Categories=Network;WebBrowser;
 MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
 Actions=new-window;new-private-window;
@@ -219,4 +220,4 @@ Name[uk]=Нове вікно в режимі анонімного перегля
 Name[vi]=Cửa sổ ẩn danh mới
 Name[zh_CN]=新建隐身窗口
 Name[zh_TW]=新增無痕式視窗
-Exec=/app/bin/chrome --incognito
+Exec=/app/bin/chrome --class=com.google.Chrome --incognito
