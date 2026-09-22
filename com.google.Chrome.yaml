@@ -97,9 +97,9 @@ modules:
     sources:
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-amd64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_153.0.8010.52-1_amd64.deb
-        sha256: 29e0e4b5af01213915ffdb7f4e49a11956dc5fc591165c85af8688dcdff907ac
-        size: 141915424
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_154.0.8037.57-1_amd64.deb
+        sha256: 66c0645f6a19871bab2844b8537c11a0db2e7d3bea8ef85a1c7cb52a54e65a3e
+        size: 142114088
         filename: chrome.deb
         only-arches: [x86_64]
         x-checker-data:
@@ -111,9 +111,9 @@ modules:
           is-main-source: true
       - type: extra-data
         # From https://dl.google.com/linux/chrome/deb/dists/stable/main/binary-arm64/Packages
-        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_153.0.8010.52-1_arm64.deb
-        sha256: e5a1d646af594568941e3a61e7b8eddc693f769b7f166874c71f72c9cb806165
-        size: 134156320
+        url: https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_154.0.8037.57-1_arm64.deb
+        sha256: 7418b6f9ad931cb74eb0dc9d66b5ec7f4e9f86872d340394545b5150808276e7
+        size: 134410956
         filename: chrome.deb
         only-arches: [aarch64]
         x-checker-data:
