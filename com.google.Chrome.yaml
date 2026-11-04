@@ -1,9 +1,9 @@
 app-id: com.google.Chrome
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 base: org.chromium.Chromium.BaseApp
-base-version: '25.08'
+base-version: '26.08'
 command: chrome
 separate-locales: false
 build-options:
