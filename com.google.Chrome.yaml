@@ -48,6 +48,10 @@ finish-args:
   - --env=GSETTINGS_BACKEND=dconf
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
+  # Qt Theme
+  - --filesystem=xdg-config/kdeglobals:ro
+  - --talk-name=org.kde.KGlobalSettings
+  - --talk-name=org.kde.kconfig.notify
 modules:
   - name: dconf
     buildsystem: meson
