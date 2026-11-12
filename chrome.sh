@@ -13,6 +13,14 @@ for policy_type in managed recommended enrollment; do
   fi
 done
 
-touch "${XDG_CONFIG_HOME}/google-chrome/WidevineCdm"
+# Keep Chrome on the bundled Widevine CDM. A regular file at this path stops
+# the component updater from installing copies there, which the Zypak sandbox
+# cannot load. Replace a directory left by an earlier download with that file.
+widevine_path="${XDG_CONFIG_HOME}/google-chrome/WidevineCdm"
+mkdir -p "${XDG_CONFIG_HOME}/google-chrome"
+if [[ -d "$widevine_path" ]]; then
+  rm -rf -- "$widevine_path"
+fi
+touch "$widevine_path"
 
 exec cobalt "$@"
