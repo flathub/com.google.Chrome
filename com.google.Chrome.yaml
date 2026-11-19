@@ -39,9 +39,6 @@ finish-args:
   - --filesystem=xdg-music
   - --filesystem=xdg-videos
   - --filesystem=xdg-pictures
-  # Allow for PWAs
-  - --filesystem=home/.local/share/applications:create
-  - --filesystem=home/.local/share/icons:create
   # For GNOME proxy resolution
   - --filesystem=xdg-run/dconf
   - --filesystem=~/.config/dconf:ro
