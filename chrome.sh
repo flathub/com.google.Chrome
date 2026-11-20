@@ -13,6 +13,11 @@ for policy_type in managed recommended enrollment; do
   fi
 done
 
-touch "${XDG_CONFIG_HOME}/google-chrome/WidevineCdm"
+export XDG_CONFIG_HOME="$(realpath -m "${XDG_CONFIG_HOME}")"
+widevine_dir="${XDG_CONFIG_HOME}/google-chrome/WidevineCdm"
+if [[ -f "$widevine_dir" ]]; then
+  rm -f "$widevine_dir"
+fi
+mkdir -p "$widevine_dir"
 
 exec cobalt "$@"
